@@ -1,26 +1,20 @@
 import { registerRootComponent } from 'expo';
-import i18next from 'i18next';
 import { Suspense } from 'react';
-import { initReactI18next, useTranslation } from 'react-i18next';
-
-import BuzzRoutes from './routes/BuzzRoutes';
-
-i18next.use(initReactI18next).init({
-  resources: {
-    en: {
-      translation: require('./translations/en'),
-    },
-  },
-  lng: 'en',
-  fallbackLng: 'en',
-  interpolation: { escapeValue: true },
-});
+import BuzzRoutes from '@routes/BuzzRoutes';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { ThemeProvider } from 'styled-components/native';
+import * as theme from '@config/theme';
+import './config/i18n';
 
 const App = () => {
   return (
-    <Suspense fallback="Loading...">
-      <BuzzRoutes />
-    </Suspense>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Suspense fallback="Loading...">
+        <ThemeProvider theme={theme}>
+          <BuzzRoutes />
+        </ThemeProvider>
+      </Suspense>
+    </GestureHandlerRootView>
   );
 };
 

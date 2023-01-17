@@ -1,7 +1,11 @@
-import { View } from 'react-native';
+import { useTranslation } from 'react-i18next';
+import SplashScreenComponent from './SplashScreen.component';
 
 const SplashScreenContainer = (props: any) => {
-  return <View />;
+  const { t } = useTranslation();
+
+  const handledProps = { t };
+  return <SplashScreenComponent {...handledProps} />;
 };
 
 export default SplashScreenContainer;

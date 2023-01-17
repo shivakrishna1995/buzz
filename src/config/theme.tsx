@@ -1,4 +1,4 @@
-const colors = {
+const color = {
   primary: '#5B41EB',
   secondary: '#EDEDEF',
   info: 'teal #17a2b8',
@@ -11,11 +11,10 @@ const colors = {
 };
 
 const fontSize = {
-  heading: '',
-  subHeading: '',
-  accent: '',
-  buttonText: '',
-  contentText: '',
+  h1: '42px',
+  h2: '32px',
+  content: '14px',
+  buttonText: '15px',
 };
 
-export { colors };
+export { color, fontSize };

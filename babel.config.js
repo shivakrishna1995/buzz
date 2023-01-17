@@ -17,6 +17,7 @@ module.exports = function (api) {
             '.jsx',
             '.js',
             '.json',
+            '.svg',
           ],
           alias: {
             '@api': './src/api',
