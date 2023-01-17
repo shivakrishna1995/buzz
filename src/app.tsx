@@ -2,7 +2,8 @@ import { registerRootComponent } from 'expo';
 import i18next from 'i18next';
 import { Suspense } from 'react';
 import { initReactI18next, useTranslation } from 'react-i18next';
-import { View, Text } from 'react-native';
+
+import BuzzRoutes from './routes/BuzzRoutes';
 
 i18next.use(initReactI18next).init({
   resources: {
@@ -16,12 +17,9 @@ i18next.use(initReactI18next).init({
 });
 
 const App = () => {
-  const { t } = useTranslation();
   return (
     <Suspense fallback="Loading...">
-      <View>
-        <Text>{t('sampleKey')}</Text>
-      </View>
+      <BuzzRoutes />
     </Suspense>
   );
 };
