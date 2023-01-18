@@ -1,7 +1,7 @@
-import { View } from 'react-native';
+import SignUpPhoneNumberComponent from './SignUpPhoneNumber.component';
 
 const SplashScreenContainer = (props: any) => {
-  return <View />;
+  return <SignUpPhoneNumberComponent />;
 };
 
 export default SplashScreenContainer;

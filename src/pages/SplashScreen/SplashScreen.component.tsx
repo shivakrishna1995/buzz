@@ -1,21 +1,19 @@
-import React from 'react';
-import Text from '@components/Text';
-import Container from '@components/Container';
-import Button from '@components/Button';
-import ZStack from '@components/ZStack';
-import SplashScreenBg from '@assets/img/SplashScreenBg.svg';
 import Avatar from '@components/Avatar';
+import Button from '@components/Button';
+import Container from '@components/Container';
+import Text from '@components/Text';
+import ZStack from '@components/ZStack';
+import React from 'react';
+import { TouchableWithoutFeedback } from 'react-native';
 
 type SplashScreenComponentProps = {
   t: any;
+  onClickSignUp: () => any;
 };
 
-const SplashScreenComponent = ({ t }: SplashScreenComponentProps) => {
+const SplashScreenComponent = ({ t, onClickSignUp }: SplashScreenComponentProps) => {
   return (
     <ZStack>
-      <Container center>
-        <SplashScreenBg />
-      </Container>
       <Container center>
         <Avatar
           style={{ top: 50 }}
@@ -39,13 +37,15 @@ const SplashScreenComponent = ({ t }: SplashScreenComponentProps) => {
         />
       </Container>
       <Container>
-        <Text mla primary semiBold>
-          {t('login')}
-        </Text>
+        <TouchableWithoutFeedback>
+          <Text mla primary semiBold>
+            {t('login')}
+          </Text>
+        </TouchableWithoutFeedback>
         <Text mva h2 semiBold>
           {t('splashScreenTitle')}
         </Text>
-        <Button center>
+        <Button center onPress={onClickSignUp} testID="splashscreen-signup">
           <Text semiBold white>
             {t('signUp')}
           </Text>

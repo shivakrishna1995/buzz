@@ -9,8 +9,9 @@ type ButtonWrapperProps = {
 
 type ButtonProps = {
   children: any;
-  onPress?: () => null;
+  onPress?: () => object;
   center?: boolean;
+  testID?: string;
 };
 
 const ButtonWrapper = styled.View<ButtonWrapperProps>`
@@ -23,9 +24,9 @@ const ButtonWrapper = styled.View<ButtonWrapperProps>`
   ${(props) => props?.center && `justify-content: center; align-items: center;`}
 `;
 
-const Button = (props: any) => {
+const Button = (props: ButtonProps) => {
   return (
-    <TouchableWithoutFeedback onPress={props?.onPress}>
+    <TouchableWithoutFeedback onPress={props?.onPress} testID={props?.testID}>
       <ButtonWrapper {...props}>{props?.children}</ButtonWrapper>
     </TouchableWithoutFeedback>
   );
