@@ -24,7 +24,7 @@ const Stack = createNativeStackNavigator<RootStackTypes>();
 const BuzzRoutes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: false, animation: 'none' }}>
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="SignUpPhoneNumber" component={SignUpPhoneNumber} />
         <Stack.Screen name="SignUpCountryCode" component={SignUpCountryCode} />

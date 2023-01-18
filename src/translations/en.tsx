@@ -11,6 +11,9 @@ const EN = {
   verifyNumberDescription: `Enter the 4-digit code sent to you at`,
   didntGetOtpText: `Didn’t get the code? We can `,
   resendIn: `resend it in 58s.`,
+  username: `Username`,
+  usernamePlaceholder: `Enter your username`,
+  upload: `Upload`,
 };
 
 export default EN;

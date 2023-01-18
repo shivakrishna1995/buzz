@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 
 type BoxPropTypes = {
+  theme?: any;
   mt?: string;
   mr?: string;
   mb?: string;
@@ -11,12 +12,15 @@ type BoxPropTypes = {
   pl?: string;
   fill?: boolean;
   backgroundColor?: string;
+  bgDisabled?: boolean;
   row?: boolean;
   col?: boolean;
   mainCenter?: boolean;
   crossCenter?: boolean;
+  center?: boolean;
   height?: string;
   width?: string;
+  rounded?: boolean;
 };
 
 const Box = styled.View<BoxPropTypes>`
@@ -35,11 +39,14 @@ const Box = styled.View<BoxPropTypes>`
   ${({ col }) => col && `flex-direction: column`}
   ${({ mainCenter }) => mainCenter && `justify-content: center`}
   ${({ crossCenter }) => crossCenter && `align-items: center`}
+  ${({ center }) => center && `justify-content: center;align-items: center;`}
   /* color */
   ${({ backgroundColor }) => backgroundColor && `background-color: ${backgroundColor}`}
+  ${({ bgDisabled, theme }) => bgDisabled && `background-color: ${theme?.color?.disabled}`}
   /* box props */
   ${({ height }) => height && `height: ${height}`}
   ${({ width }) => width && `width: ${width}`}
+  ${({ rounded, width }) => rounded && `border-radius: ${width}`}
 `;
 
 export default Box;
