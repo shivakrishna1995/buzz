@@ -40,7 +40,7 @@ const Step: any = styled.View`
   margin-right: 10px;
   height: 5.2px;
   background-color: ${({ theme, active }: any) =>
-    active ? theme?.color.primary : theme?.color.disabled};
+    active ? theme?.color?.primary : theme?.color?.disabled};
   border-radius: 6px;
 `;
 

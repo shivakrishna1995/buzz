@@ -15,6 +15,8 @@ type BoxPropTypes = {
   col?: boolean;
   mainCenter?: boolean;
   crossCenter?: boolean;
+  height?: string;
+  width?: string;
 };
 
 const Box = styled.View<BoxPropTypes>`
@@ -35,6 +37,9 @@ const Box = styled.View<BoxPropTypes>`
   ${({ crossCenter }) => crossCenter && `align-items: center`}
   /* color */
   ${({ backgroundColor }) => backgroundColor && `background-color: ${backgroundColor}`}
+  /* box props */
+  ${({ height }) => height && `height: ${height}`}
+  ${({ width }) => width && `width: ${width}`}
 `;
 
 export default Box;
