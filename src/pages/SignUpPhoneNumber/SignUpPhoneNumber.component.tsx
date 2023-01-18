@@ -8,9 +8,18 @@ import Text from '@components/Text';
 type SignUpPhoneNumberComponentProps = {
   t?: any;
   activeStep?: number;
+  phoneInput?: string;
+  onChangePhoneNumber?: any;
+  onClickNext?: () => any;
 };
 
-const SignUpPhoneNumberComponent = ({ t, activeStep }: SignUpPhoneNumberComponentProps) => {
+const SignUpPhoneNumberComponent = ({
+  t,
+  activeStep,
+  phoneInput,
+  onChangePhoneNumber,
+  onClickNext,
+}: SignUpPhoneNumberComponentProps) => {
   return (
     <Container noPadding>
       <Header title={t?.('signUp')} activeStep={activeStep} />
@@ -23,11 +32,17 @@ const SignUpPhoneNumberComponent = ({ t, activeStep }: SignUpPhoneNumberComponen
         <Field leftIcon width="70px" label={t?.('country')} placeholder="+44" />
         <Box ml="20px" />
         <Box fill>
-          <Field label={t?.('phoneNumber')} placeholder={t?.('phoneNumberPlaceholder')} />
+          <Field
+            label={t?.('phoneNumber')}
+            placeholder={t?.('phoneNumberPlaceholder')}
+            testID="phonenumber-input"
+            value={phoneInput}
+            onChange={onChangePhoneNumber}
+          />
         </Box>
       </Box>
       <Box ml="24px" mr="24px">
-        <Button center>
+        <Button center testID="phonenumber-next" onPress={onClickNext}>
           <Text semiBold white buttonText>
             {t?.('next')}
           </Text>

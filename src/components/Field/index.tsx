@@ -8,6 +8,8 @@ type FieldPropTypes = {
   placeholder?: string;
   width?: string;
   leftIcon?: boolean;
+  testID?: string;
+  onChange?: (e: any) => object;
 };
 
 const FieldWrapper = styled.View<{ width?: string }>`
@@ -22,7 +24,15 @@ const Input = styled.TextInput`
   font-size: 20px;
 `;
 
-const Field = ({ label, placeholder, width, leftIcon }: FieldPropTypes) => {
+const Field = ({
+  label,
+  value,
+  placeholder,
+  width,
+  leftIcon,
+  testID,
+  onChange,
+}: FieldPropTypes) => {
   return (
     <FieldWrapper width={width}>
       <Box mb="13px">
@@ -34,7 +44,7 @@ const Field = ({ label, placeholder, width, leftIcon }: FieldPropTypes) => {
             <Text>🇬🇧</Text>
           </Box>
         )}
-        <Input placeholder={placeholder} />
+        <Input value={value} onChangeText={onChange} placeholder={placeholder} testID={testID} />
       </Box>
     </FieldWrapper>
   );
