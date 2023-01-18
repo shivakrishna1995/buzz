@@ -46,7 +46,7 @@ const SplashScreenComponent = ({ t, onClickSignUp }: SplashScreenComponentProps)
           {t('splashScreenTitle')}
         </Text>
         <Button center onPress={onClickSignUp} testID="splashscreen-signup">
-          <Text semiBold white>
+          <Text semiBold white uppercase>
             {t('signUp')}
           </Text>
         </Button>

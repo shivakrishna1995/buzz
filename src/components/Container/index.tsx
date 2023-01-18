@@ -5,13 +5,17 @@ import styled from 'styled-components/native';
 type ContainerPropTypes = {
   [x: string]: ReactNode;
   center?: boolean;
+  noPadding?: boolean;
 };
 
 const Wrapper = styled.View<ContainerPropTypes>`
-  padding: 26px;
+  /* common */
   flex: 1;
+  padding: 26px;
   /* flex */
   ${({ center }) => center && `justify-content: center; align-items: center;`}
+  /* spacing */
+  ${({ noPadding }) => noPadding && 'padding: 0px;'}
 `;
 
 const Container = (props: ContainerPropTypes) => {

@@ -8,11 +8,13 @@ const color = {
   dark: '#18181F',
   light: '#f8f9fa',
   white: '#FFFFFF',
+  disabled: '#dddddd',
 };
 
 const fontSize = {
   h1: '42px',
   h2: '32px',
+  h6: '17px',
   content: '14px',
   buttonText: '15px',
 };
